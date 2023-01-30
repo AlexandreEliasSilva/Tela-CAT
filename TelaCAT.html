@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Abertura de CAT</title>
+
+    <Style>
+        .tipodecat {
+            width: 50%;
+            float: left;
+        }
+
+        .ncat {
+            width: 50%;
+            float: right;
+        }
+
+        .dataAcidente {
+            width: 50%;
+            float: left;
+        }
+
+        .horastrabalhadas {
+            width: 50%;
+            float: right;
+        }
+
+        .dataregistro {
+            width: 50%;
+            float: left;
+        }
+
+        .horaacidente {
+            width: 50%;
+            float: right;
+        }
+
+        .afastamento {
+            width: 50%;
+            float: left;
+        }
+
+        .ultimodia {
+            width: 50%;
+            float: right;
+        }
+
+        .endereco {
+            width: 50%;
+            float: left;
+        }
+
+        .numero {
+            width: 50%;
+            float: right;
+        }
+
+        .bairro {
+            width: 50%;
+            float: left;
+        }
+
+        .cidade {
+            width: 50%;
+            float: right;
+        }
+
+        .estado {
+            width: 50%;
+            float: left;
+        }
+
+        .codmunicipio {
+            width: 50%;
+            float: right;
+        }
+
+        .datendimento {
+            width: 50%;
+            float: left;
+        }
+
+        .hatendimento {
+            width: 50%;
+            float: right;
+        }
+    </Style>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <Legend>Informações da Empresa</Legend>
+
+
+            Empresa
+            <input type="text" name="tempresa" placeholder="Razão Social" maxlength="80" required><br><br>
+
+            CNPJ
+            <input type="text" name="ncnpj" required><br><br>
+
+            Responsavel pela CAT
+            <input type="text" name="tnome" maxlength="80" required><br><br>
+
+            Telefone para contato
+            <input type="tel" name="tcontato" maxlength="11" required><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Informações do Funcionario</legend>
+
+
+            Funcionario
+            <input type="text" name="tfuncionario" maxlength="80" required><br><br>
+
+            CPF do Funcionario
+            <input type="text" name="ncpf" required><br><br>
+
+            Matricula e-Social
+            <input type="text" name="tmatricula" maxlength="31" required><br>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>CAT</legend>
+
+
+            <div class="tipodecat"> Tipo de CAT
+                <select name="tipocat" required>
+                    <option value></option>
+                    <option value="1">Inicial</option>
+                    <option value="2">Reabertura</option>
+                    <option value="3">Comunicado de Óbito</option>
+                </select>
+            </div>
+
+            <div class="ncat">Numero da CAT
+                <input type="text" name="tncat" placeholder="Reabertura">
+            </div><br><br>
+
+            Tipo de acidente de trabalho
+            <select name="tipoacidente" required>
+                <option value></option>
+                <option value="1">Tipico</option>
+                <option value="2">Doença</option>
+                <option value="3">Trajeto</option>
+            </select><br><br>
+
+            <div class="dataAcidente">Data do acidente
+                <input type="date" name="dataAcidente" required>
+            </div>
+
+            <div class="horastrabalhadas">Horas trabalhadas antes do acidente
+                <input type="time" name="hora" required>
+            </div><br><br>
+
+            <div class="dataregistro">Data do registro
+                <input type="date" name="dataregistro" required>
+            </div>
+
+            <div class="horaacidente">Hora do acidente
+                <input type="time" name="hacidente" required>
+            </div><br><br>
+
+            Iniciativa CAT
+            <select name="tiniciativa" required>
+                <option value="0"></option>
+                <option value="1">Iniciativa do empregador</option>
+                <option value="2">Ordem judicial</option>
+                <option value="3">Determinação de órgão fiscalizador</option>
+            </select><br><br>
+
+            Descrição Situação geradora<br>
+            <textarea name="obs" required></textarea><br>
+
+            <div class="afastamento">Houve afastamento ?
+                <input type="radio" name="rafastamento" value="S">Sim
+                <input type="radio" name="rafastamento" value="N">Não
+            </div>
+
+            <div class="ultimodia">Ultimo dia trabalhado
+                <input type="date" name="ultimodia">
+            </div>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Local do Acidente</legend>
+
+
+            Local do Acidente
+            <select name="lacidente" required>
+                <option value="0"></option>
+                <option value="1">Estabelecimento do empregador no Brasil</option>
+                <option value="2">Estabelecimento do empregador no Exterior</option>
+                <option value="3">Estabelecimento de terceiros onde o empregador presta serviços</option>
+                <option value="4">Via pública</option>
+                <option value="5">Área rural</option>
+                <option value="6">Embarcação</option>
+                <option value="9">Outros</option>
+            </select><br><br>
+
+            Tipo de inscrição
+            <select name="tinscrição">
+                <option value="0"></option>
+                <option value="1">CNPJ</option>
+                <option value="3">CAEPF (Cadastro de Atividade Econômica de Pessoa Física)</option>
+                <option value="4">CNO (Cadastro Nacional de Obra)</option>
+            </select><br><br>
+
+            Numero de inscrição
+            <input type="text"><br><br>
+
+            Tipo de logradouro
+            <select name="Tlogradouro">
+                <option value></option>
+                <option value="A">Área</option>
+                <option value="AC">Acesso</option>
+                <option value="ACA">Acampamento</option>
+                <option value="ACL">Acesso Local</option>
+                <option value="AD">Adro</option>
+                <option value="AE">Área Especial</option>
+                <option value="AER">Aeroporto</option>
+                <option value="AL">Alameda</option>
+                <option value="AMD">Avenida Marginal Direita</option>
+                <option value="AME">Avenida Marginal Esquerda</option>
+                <option value="AN">Anel Viário</option>
+                <option value="ANT">Antiga Estrada</option>
+                <option value="ART">Artéria</option>
+                <option value="AT">Alto</option>
+                <option value="ATL">Atalho</option>
+                <option value="A V">Área Verde</option>
+                <option value="AV">Avenida</option>
+                <option value="AVC">Avenida Contorno</option>
+                <option value="AVM">Avenida Marginal</option>
+                <option value="AVV">Avenida Velha</option>
+                <option value="BAL">Balneário</option>
+                <option value="BC">Beco</option>
+                <option value="BCO">Buraco</option>
+                <option value="BEL">Belvedere</option>
+                <option value="BL">Bloco</option>
+                <option value="BLO">Balão</option>
+                <option value="BLS">Blocos</option>
+                <option value="BLV">Bulevar</option>
+                <option value="BSQ">Bosque</option>
+                <option value="BVD">Boulevard</option>
+                <option value="BX">Baixa</option>
+                <option value="C">Cais</option>
+                <option value="CAL">Calçada</option>
+                <option value="CAM">Caminho</option>
+                <option value="CAN">Canal</option>
+                <option value="CH">Chácara</option>
+                <option value="CHA">Chapadão</option>
+                <option value="CIC">Ciclovia</option>
+                <option value="CIR">Circular</option>
+                <option value="CJ">Conjunto</option>
+                <option value="CJM">Conjunto Mutirão</option>
+                <option value="CMP">Complexo Viário</option>
+                <option value="COL">Colônia</option>
+                <option value="COM">Comunidade</option>
+                <option value="CON">Condomínio</option>
+                <option value="COR">Corredor</option>
+                <option value="CPO">Campo</option>
+                <option value="CRG">Córrego</option>
+                <option value="CTN">Contorno</option>
+                <option value="DSC">Descida</option>
+                <option value="DSV">Desvio</option>
+                <option value="DT">Distrito</option>
+                <option value="EB">Entre Bloco</option>
+                <option value="EIM">Estrada Intermunicipal</option>
+                <option value="ENS">Enseada</option>
+                <option value="ENT">Entrada Particular</option>
+                <option value="EQ">Entre Quadra</option>
+                <option value="ESC">Escada</option>
+                <option value="ESD">Escadaria</option>
+                <option value="ESE">Estrada Estadual</option>
+                <option value="ESI">Estrada Vicinal</option>
+                <option value="ESL">Estrada de Ligação</option>
+                <option value="ESM">Estrada Municipal</option>
+                <option value="ESP">Esplanada</option>
+                <option value="ESS">Estrada de Servidão</option>
+                <option value="EST">Estrada</option>
+                <option value="ESV">Estrada Velha</option>
+                <option value="ETA">Estrada Antiga</option>
+                <option value="ETC">Estação</option>
+                <option value="ETD">Estádio</option>
+                <option value="ETN">Estância</option>
+                <option value="ETP">Estrada Particular</option>
+                <option value="ETT">Estacionamento</option>
+                <option value="EVA">Evangélica</option>
+                <option value="EVD">Elevada</option>
+                <option value="EX">Eixo Industrial</option>
+                <option value="FAV">Favela</option>
+                <option value="FAZ">Fazenda</option>
+                <option value="FER">Ferrovia</option>
+                <option value="FNT">Fonte</option>
+                <option value="FRA">Feira</option>
+                <option value="FTE">Forte</option>
+                <option value="GAL">Galeria</option>
+                <option value="GJA">Granja</option>
+                <option value="HAB">Núcleo Habitacional</option>
+                <option value="IA">Ilha</option>
+                <option value="IND">Indeterminado</option>
+                <option value="IOA">Ilhota</option>
+                <option value="JD">Jardim</option>
+                <option value="JDE">Jardinete</option>
+                <option value="LD">Ladeira</option>
+                <option value="LGA">Lagoa</option>
+                <option value="LGO">Lago</option>
+                <option value="LOT">Loteamento</option>
+                <option value="LRG">Largo</option>
+                <option value="LT">Lote</option>
+                <option value="MER">Mercado</option>
+                <option value="MNA">Marina</option>
+                <option value="MOD">Modulo</option>
+                <option value="MRG">Projeção</option>
+                <option value="MRO">Morro</option>
+                <option value="MTE">Monte</option>
+                <option value="NUC">Núcleo</option>
+                <option value="NUR">Núcleo Rural</option>
+                <option value="O">Outros</option>
+                <option value="OUT">Outeiro</option>
+                <option value="PAR">Paralela</option>
+                <option value="PAS">Passeio</option>
+                <option value="PAT">Pátio</option>
+                <option value="PC">Praça</option>
+                <option value="PCE">Praça de Esportes</option>
+                <option value="PDA">Parada</option>
+                <option value="PDO">Paradouro</option>
+                <option value="PNT">Ponta</option>
+                <option value="PR">Praia</option>
+                <option value="PRL">Prolongamento</option>
+                <option value="PRM">Parque Municipal</option>
+                <option value="PRQ">Parque</option>
+                <option value="PRR">Parque Residencial</option>
+                <option value="PSA">Passarela</option>
+                <option value="PSG">Passagem</option>
+                <option value="PSP">Passagem de Pedestre</option>
+                <option value="PSS">Passagem Subterrânea</option>
+                <option value="PTE">Ponte</option>
+                <option value="PTO">Porto</option>
+                <option value="Q">Quadra</option>
+                <option value="QTA">Quinta</option>
+                <option value="QTS">Quintas</option>
+                <option value="R">Rua</option>
+                <option value="R I">Rua Integração</option>
+                <option value="R L">Rua de Ligação</option>
+                <option value="R P">Rua Particular</option>
+                <option value="RV">Rua Velha</option>
+                <option value="RAM">Ramal</option>
+                <option value="RCR">Recreio</option>
+                <option value="REC">Recanto</option>
+                <option value="RER">Retiro</option>
+                <option value="RES">Residencial</option>
+                <option value="RET">Reta</option>
+                <option value="RLA">Ruela</option>
+                <option value="RMP">Rampa</option>
+                <option value="ROA">Rodo Anel</option>
+                <option value="ROD">Rodovia</option>
+                <option value="ROT">Rotula</option>
+                <option value="RPE">Rua de Pedestre</option>
+                <option value="RPR">Margem</option>
+                <option value="RTN">Retorno</option>
+                <option value="RTT">Rotatória</option>
+                <option value="SEG">Segunda Avenida</option>
+                <option value="SIT">Sitio</option>
+                <option value="SRV">Servidão</option>
+                <option value="ST">Setor</option>
+                <option value="SUB">Subida</option>
+                <option value="TCH">Trincheira</option>
+                <option value="TER">Terminal</option>
+                <option value="TR">Trecho</option>
+                <option value="TRV">Trevo</option>
+                <option value="TUN">Túnel</option>
+                <option value="TV">Travessa</option>
+                <option value="TVP">Travessa Particular</option>
+                <option value="TVV">Travessa Velha</option>
+                <option value="UNI">Unidade</option>
+                <option value="V">Via</option>
+                <option value="V C">Via Coletora</option>
+                <option value="V L">Via Local</option>
+                <option value="VAC">Via de Acesso</option>
+                <option value="VAL">Vala</option>
+                <option value="VCO">Via Costeira</option>
+                <option value="VD">Viaduto</option>
+                <option value="V-E">Via Expressa</option>
+                <option value="VER">Vereda</option>
+                <option value="VEV">Via Elevado</option>
+                <option value="VL">Vila</option>
+                <option value="VLA">Viela</option>
+                <option value="VLE">Vale</option>
+                <option value="VLT">Via Litorânea</option>
+                <option value="VPE">Via de Pedestre</option>
+                <option value="VRT">Variante</option>
+                <option value="ZIG">Zigue-Zague</option>
+                <option value="ALD">Aldeia</option>
+                <option value="IGP">Igarapé</option>
+            </select><br><br>
+
+            <div class="endereco">Endereço
+                <input type="text" required>
+            </div>
+
+            <div class="numero">Numero
+                <input type="text" required>
+            </div><br><br>
+
+            <div class="bairro">Bairro
+                <input type="text" required>
+            </div>
+
+            <div class="cidade">Cidade
+                <input type="text" required>
+            </div><br><br>
+
+            <div class="estado">Estado
+                <input type="text" required>
+            </div>
+
+            <div class="codmunicipio">Codigo Municipio
+                <input type="text" required>
+            </div>
+
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Partes do corpo atingidas</legend>
+
+            Parte (s) do corpo atingida (s)
+            <select>
+                <option value="0"></option>
+                <option value="753030000">Crânio (inclusive encefalo)</option>
+                <option value="753050000">Ouvido (externo,medio,interno,audição e equilibrio)</option>
+                <option value="753070100">Olho (inclusive nervo ótico e visão)</option>
+                <option value="753070300">Nariz (inclusive fossas nasais, seios da face e olfato)</option>
+                <option value="753070500">Boca (inclusive labios, dentes, lingua, garganta e paladar)</option>
+                <option value="753070700">Mandibula (inclusive queixo)</option>
+                <option value="753070800">Face (qualquer combinação das partes acima)</option>
+                <option value="753080000">Cabeça (qualquer combinação das partes acima)</option>
+                <option value="753090000">Cabeca, nic</option>
+                <option value="753510000">Braço (entre o punho e o ombro)</option>
+                <option value="753510200">Braço (acima do cotovelo)</option>
+                <option value="754000000">Pescoço</option>
+                <option value="755010400">Cotovelo</option>
+                <option value="755010600">Antebraço (entre o punho e o cotovelo)</option>
+                <option value="755030000">Punho</option>
+                <option value="755050000">Mão (exceto punho ou dedos)</option>
+                <option value="755070000">Dedo</option>
+                <option value="755080000">Membros superiores</option>
+                <option value="755090000">Membros superiores, nic</option>
+                <option value="756020000">Ombro</option>
+                <option value="756030000">Torax (inclusive orgãos internos)</option>
+                <option value="756040000">Dorso (inclusive musculos dorsais, coluna e medula espinhal)</option>
+                <option value="756050000">Abdome (inclusive orgãos internos)</option>
+                <option value="756060000">Quadris (inclusive pelvis, orgãos pelvicos e nadegas)</option>
+                <option value="756070000">Tronco (qualquer combinação das partes acima)</option>
+                <option value="756090000">Tronco, nic</option>
+                <option value="757010000">Perna (entre o tornozelo e a pelvis)</option>
+                <option value="757010200">Coxa</option>
+                <option value="757010400">Joelho</option>
+                <option value="757010600">Perna (do tornozelo, exclusive, ao joelho, exclusive)</option>
+                <option value="757030000">Articulação do tornozelo</option>
+                <option value="757050000">Pe (exceto artelhos)</option>
+                <option value="757070000">Artelho</option>
+                <option value="757080000">Membros inferiores, (qualquer combinação das partes acima)</option>
+                <option value="757090000">Membros inferiores, nic</option>
+                <option value="758000000">Partes multiplas - Com mais de um membro importante</option>
+                <option value="758500000">Sistema e Aparelhos Motores</option>
+                <option value="758520000">Aparelho circulatório</option>
+                <option value="758530000">Aparelho Respiratório</option>
+                <option value="758540000">Sistema nervoso</option>
+                <option value="758550000">Aparelho digestivo</option>
+                <option value="758560000">Aparelho genito-urinário</option>
+                <option value="758570000">Sistema musculo-esqueletico</option>
+                <option value="758590000">Sistemas e aparelhos, nic</option>
+                <option value="759000000">Localização da lesão, nic</option>
+            </select><br><br>
+
+            Letalidade
+            <select>
+                <option value=""></option>
+                <option value="0">Não aplicável</option>
+                <option value="1">Esquerda</option>
+                <option value="2">Direita</option>
+                <option value="3">Ambas</option>
+            </select><br>
+            
+            <input type="button" value="+">
+
+            <!-- ver um jeito de colocar as partes do corpo atingindas-->
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Agente Causador</legend>
+
+            <!-- dar um jeito de colocar agente causador se possivel-->
+
+        </fieldset><br>
+
+        <fieldset><br>
+            <legend>Atestado Medico</legend>
+
+
+            <div class="datendimento">Data do atendimento
+                <input type="date" required>
+            </div>
+
+            <div class="hatendimento"> Hora do atendimento
+                <input type="time" required>
+            </div><br><br>
+
+            Local do atendimento
+            <input type="text" name="lantendimento" maxlength="80" required><br><br>
+
+            Afastamento durante o tratamento ?
+            <input type="radio" name="rafastamento" value="S" required>Sim
+            <input type="radio" name="rafastamento" value="N" required>Não
+            <br><br>
+
+            Duração do tratamento (dias)
+            <input type="text" name="dtratamento" required><br>
+
+            Internação
+            <input type="radio" name="rinternacao" value="S" required>Sim
+            <input type="radio" name="rinternacao" value="N" required>Não
+            <br><br>
+
+            Naturaza da lesão
+            <select>
+                <option value="0"></option>
+                <option value="702000000">Lesão imediata</option>
+                <option value="702005000">Escoriação,Abrasão (Ferimento Superficial)</option>
+                <option value="702010000">Corte,Laceração,feriada contusa,punctura(ferida aberta)</option>
+                <option value="702015000">Contusão, esmagamento (superficie cutânea intacta)</option>
+                <option value="702020000">Distensão, torção</option>
+                <option value="702025000">Inflamação de articulação, tendão ou músculo inclui sinovite, tenossionovite,
+                    etc. não inclui distensão, torção ou suas consequências</option>
+                <option value="702030000">Luxação</option>
+                <option value="702035000">Fratura</option>
+                <option value="702040000">Queimadura ou escaldadura - efeito de temperatura elevada. efeito do contato
+                    com substância quente. inclui queimadura por eletricidade</option>
+                <option value="702042000">Queimadura química (lesão de tecido provocada pela ação corrosiva de produto
+                    químico, suas emanações, etc.)</option>
+                <option value="702045000">Efeito de radiação (imediato) - queimadura de sol e toda forma de lesão de
+                    tecido, osso ou fluido orgânico, por exposição a radiação</option>
+                <option value="702048000">Congelamento, geladura e outros efeitos da exposição a baixa temperatura
+                </option>
+                <option value="702050000">Asfixia, estrangulamento, afogamento</option>
+                <option value="702055000">Intermação, insolação, caibra, exaustão e outros efeitos da temperatura
+                    ambiente elevada - não inclui queimadura de sol ou outros efeitos</option>
+                <option value="702060000">Choque elétrico e eletroplessão (eletrocussão)</option>
+                <option value="702065000">Hernia de qualquer natureza, ruptura</option>
+                <option value="702070000">Amputação ou enucleação</option>
+                <option value="702075000">Perda ou diminuição de sentido (audição, visão, olfato, paladar e tato, desde
+                    que não seja sequela de outra lesão)</option>
+                <option value="702080000">Concussão cerebral</option>
+                <option value="702090000">Lesão imediata, nic</option>
+                <option value="704020000">Doença contagiosa ou infecciosa (tuberculose, brucelose, etc.)</option>
+                <option value="704030000">Pneumoconiose (silicose, asbestose, etc.)</option>
+                <option value="704040000">Dermatose (erupção, inflamação da pele, inclusive furunculo, etc.). geralmente
+                    provocada pelo contato direto com substâncias ou agentes</option>
+                <option value="704050000">Envenenamento sistêmico - condição morbida sistêmica provocada por inalação,
+                    ingestão ou absorcão cutânea de substância tóxica, que afe</option>
+                <option value="704060000">Perda ou diminuição mediatas de sentido (audição, visão, olfato, paladar e
+                    tato, desde que não seja sequela de outra lesão)</option>
+                <option value="704070000">Efeito de radiação (mediato) - queimadura do sol e toda forma de lesão de
+                    tecido, osso, ou fluido orgânico por exposição a radiação</option>
+                <option value="704090000">Doença, nic</option>
+                <option value="706050000">Lesões multiplas</option>
+                <option value="706090000">Outras lesões, nic</option>
+            </select><br><br>
+
+            Descrição Situação geradora<br>
+            <textarea name="obs"></textarea><br><br>
+
+            CID
+            <input type="text" required><br><br>
+
+            Médico(a)
+            <input type="text" maxlength="80" required><br><br>
+
+            Sigla conselho de calsse
+            <select>
+                <option value="0"></option>
+                <option value="1">CRM</option>
+                <option value="2">CRO</option>
+                <option value="3">RMS</option>
+            </select><br><br>
+
+            Conselho de calsse
+            <input type="text" required>
+
+            <select name="uf">
+                <option value></option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AM">AM</option>
+                <option value="AP">AP</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MG">MG</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="PR">PR</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="RS">RS</option>
+                <option value="SC">SC</option>
+                <option value="SE">SE</option>
+                <option value="SP">SP</option>
+                <option value="TO">TO</option>
+            </select>
+        </fieldset><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar Campos">
+    </form>
+</body>
